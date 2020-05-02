@@ -29,8 +29,8 @@ def burguer_index(request):
         response = JsonResponse(resp, safe=False)
         return response
     elif request.method == "POST":
-        body = json.loads(request.body.decode('utf-8'))
         try:
+            body = json.loads(request.body.decode('utf-8'))
             burguer = Hamburguesa(nombre=body["nombre"], precio=body["precio"],
                                   descripcion=body["descripcion"], imagen=body["imagen"])
             burguer.save()
@@ -47,8 +47,8 @@ def burguer_detail(request, burguer_id):
         res = form_json_burguer(burguer)
         return JsonResponse(res, safe=False)
     elif request.method == "PATCH":
-        body = json.loads(request.body.decode('utf-8'))
         try:
+            body = json.loads(request.body.decode('utf-8'))
             burguer.nombre = body["nombre"]
             burguer.precio = body["precio"]
             burguer.descripcion = body["descripcion"]
@@ -92,8 +92,8 @@ def ingredient_index(request):
         response = JsonResponse(resp, safe=False)
         return response
     elif request.method == "POST":
-        body = json.loads(request.body.decode('utf-8'))
         try:
+            body = json.loads(request.body.decode('utf-8'))
             ingredient = Ingrediente(
                 nombre=body["nombre"], descripcion=body["descripcion"])
             ingredient.save()
