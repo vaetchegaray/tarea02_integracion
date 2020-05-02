@@ -14,4 +14,4 @@ class Hamburguesa(models.Model):
     descripcion = models.CharField(("description"), max_length=200)
     imagen = models.CharField(("img"), max_length=200)
     ingredientes = models.ManyToManyField(
-        "Ingrediente", verbose_name=("Lista de ingredientes"), blank=True)
+        "Ingrediente", verbose_name=("Lista de ingredientes"), blank=True, related_name="hamburguesas")
