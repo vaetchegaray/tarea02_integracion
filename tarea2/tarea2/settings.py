@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mapsy.wsgi.application'
+WSGI_APPLICATION = 'tarea2.wsgi.application'
 
 
 # Database
